@@ -15,7 +15,6 @@ import { HeaderNavigationSection } from "./HeaderNavigationSection";
 import { useNavigate } from "react-router-dom";
 import { CartView } from "@/components/Cart/CartView";
 
-
 export function Header() {
   const navigate = useNavigate();
   const handleLogoClick = () => {
@@ -96,7 +95,7 @@ export function Header() {
             className="flex w-full justify-start"
           >
             <Image
-              className="pl-40"
+              className="pl-40 xl:pl-28 max-md:pl-20 max-sm:pl-0"
               src="/images/shopping-cart-with-dollar-sign-5399ld.png"
             />
           </button>
@@ -106,9 +105,11 @@ export function Header() {
           onSearchChange={(value) => setSearchQuery(value)}
           onSearchSubmit={handleSearch}
         />
-        <CartView />
+        <Box className="hidden xl:block">
+          <CartView />
+        </Box>
       </Group>
-            
+
       {/* Navigation section */}
       <Box
         visibleFrom="md"
