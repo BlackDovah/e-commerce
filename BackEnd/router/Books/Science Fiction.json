@@ -1,0 +1,52 @@
+{
+  "1": {
+    "author": "George Lucas",
+    "title": "Star Wars: From the Adventures of Luke Skywalker",
+    "ISBN": "0-345-26061-9",
+    "cover": "Mass Market Paperback",
+    "price": 50,
+    "description": "First Item",
+    "ID": "S1",
+    "image": "https://m.media-amazon.com/images/I/81H84LgeESL._SL1450_.jpg"
+  },
+  "2": {
+    "author": "Alan Dean Foster",
+    "title": "Star Wars: Splinter of the Mind's Eye",
+    "ISBN": "978-0345320230",
+    "cover": "Mass Market Paperback",
+    "price": 40,
+    "description": "Second Item",
+    "ID": "S2",
+    "image": "https://m.media-amazon.com/images/I/71MD0zVWLHL._SL1200_.jpg"
+  },
+  "3": {
+    "author": "Matthew Stover",
+    "title": "Star Wars: Shatterpoint",
+    "ISBN": "978-0593358788",
+    "cover": "Paperback",
+    "price": 100,
+    "description": "third Item",
+    "ID": "S3",
+    "image": "https://m.media-amazon.com/images/I/81Pc16GQNNL._SL1500_.jpg"
+  },
+  "4": {
+    "author": "Mary Shelley",
+    "title": "Frankenstein: The Original 1831 Classic",
+    "ISBN": "979-8681188445",
+    "cover": "Paperback",
+    "price": 75,
+    "description": "Fourth Item",
+    "ID": "S4",
+    "image": "https://m.media-amazon.com/images/I/61UtP0uU2GL._SL1500_.jpg"
+  },
+  "5": {
+    "author": "Frank Herbert",
+    "title": "DUNE: The Graphic Novel, Book 1: Dune: Book 1 (Volume 1) (Dune: The Graphic Novel, 1)",
+    "ISBN": "978-1419731501",
+    "cover": "Hardcover",
+    "price": 67,
+    "description": "Fifth Item",
+    "ID": "S5",
+    "image": "https://m.media-amazon.com/images/I/71lwUXdZJqL._SL1481_.jpg"
+  }
+}

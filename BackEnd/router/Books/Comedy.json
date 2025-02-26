@@ -1,0 +1,52 @@
+{
+  "1": {
+    "author": "Douglas Adams",
+    "title": "The Hitchhiker's Guide to the Galaxy Illustrated Edition",
+    "ISBN": "978-1529046137",
+    "cover": "Paperback",
+    "price": 50,
+    "description": "First Item",
+    "ID": "C1",
+    "image": "https://m.media-amazon.com/images/I/91pUhA4qZnL._SL1500_.jpg"
+  },
+  "2": {
+    "author": "Douglas Adams",
+    "title": "The Restaurant at the End of the Universe Illustrated Edition",
+    "ISBN": "978-1529099133",
+    "cover": "Paperback",
+    "price": 40,
+    "description": "Second Item",
+    "ID": "C2",
+    "image": "https://m.media-amazon.com/images/I/816I++JreJL._SL1500_.jpg"
+  },
+  "3": {
+    "author": "Terry Pratchett & Neil Gaiman",
+    "title": "Good Omens",
+    "ISBN": "978-1473214712",
+    "cover": "Hardcover",
+    "price": 100,
+    "description": "third Item",
+    "ID": "C3",
+    "image": "https://m.media-amazon.com/images/I/91fm-JBn3GL._SL1500_.jpg"
+  },
+  "4": {
+    "author": "Connie Willis",
+    "title": "A Confederacy of Dunces",
+    "ISBN": "978-0241951590",
+    "cover": "Paperback",
+    "price": 75,
+    "description": "Fourth Item",
+    "ID": "C4",
+    "image": "https://m.media-amazon.com/images/I/81eYtyuk8yL._SL1500_.jpg"
+  },
+  "5": {
+    "author": "James Goss",
+    "title": "Dirk Gently's Holistic Detective Agency",
+    "ISBN": "978-0573111228",
+    "cover": "Paperback",
+    "price": 67,
+    "description": "Fifth Item",
+    "ID": "C5",
+    "image": "https://m.media-amazon.com/images/I/71EpGFjlNTL._SL1360_.jpg"
+  }
+}

@@ -1,0 +1,1 @@
+A bookstore project created using Vite/Mantine/React/TailwindCSS

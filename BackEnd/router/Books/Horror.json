@@ -1,0 +1,52 @@
+{
+  "1": {
+    "author": "Tom Sweterlitsch",
+    "title": "Tomorrow and Tomorrow",
+    "ISBN": "978-0425275412",
+    "cover": "Paperback",
+    "price": 50,
+    "description": "First Item",
+    "ID": "H1",
+    "image": "https://m.media-amazon.com/images/I/91iZBy5XCbL._SL1500_.jpg"
+  },
+  "2": {
+    "author": "Dan Simmons",
+    "title": "Carrion Comfort: A Novel",
+    "ISBN": "978-0312567071",
+    "cover": "Paperback",
+    "price": 40,
+    "description": "Second Item",
+    "ID": "H2",
+    "image": "https://m.media-amazon.com/images/I/61YYcQ2KU3L._SL1500_.jpg"
+  },
+  "3": {
+    "author": "John Langan",
+    "title": "The Fisherman",
+    "ISBN": "978-1939905215",
+    "cover": "Paperback",
+    "price": 100,
+    "description": "third Item",
+    "ID": "H3",
+    "image": "https://m.media-amazon.com/images/I/71fg6ReTnOL._SL1360_.jpg"
+  },
+  "4": {
+    "author": "John W. Campbell",
+    "title": "Who Goes There?: The Novella That Formed the Basis of THE THING",
+    "ISBN": "978-0982332207",
+    "cover": "Paperback",
+    "price": 75,
+    "description": "Fourth Item",
+    "ID": "H4",
+    "image": "https://m.media-amazon.com/images/I/71UFwuHv6rL._SL1360_.jpg"
+  },
+  "5": {
+    "author": " Harlan Ellison",
+    "title": "I have no mouth and I must scream",
+    "ISBN": "978-0515035216",
+    "cover": "Paperback",
+    "price": 67,
+    "description": "Fifth Item",
+    "ID": "H5",
+    "image": "https://m.media-amazon.com/images/I/91vvkrqB3YL._SL1405_.jpg"
+  }
+}

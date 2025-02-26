@@ -1,0 +1,52 @@
+{
+  "1": {
+    "author": "J.R.R. Tolkien",
+    "title": "The Lord Of The Rings. The Fellowship Of The Ring",
+    "ISBN": "978-0547928210",
+    "cover": "Paperback",
+    "price": 50,
+    "description": "First Item",
+    "ID": "F1",
+    "image": "https://m.media-amazon.com/images/I/71Ep7UNeTtL._SL1500_.jpg"
+  },
+  "2": {
+    "author": "J.R.R. Tolkien",
+    "title": "The Lord of the rings. The two towers",
+    "ISBN": "978-0547928203",
+    "cover": "Paperback",
+    "price": 40,
+    "description": "Second Item",
+    "ID": "F2",
+    "image": "https://m.media-amazon.com/images/I/71FXalNQFtL._SL1500_.jpg"
+  },
+  "3": {
+    "author": "J.R.R. Tolkien",
+    "title": "The Lord of the rings. The Return of the King",
+    "ISBN": "978-0547928197",
+    "cover": "Paperback",
+    "price": 100,
+    "description": "third Item",
+    "ID": "F3",
+    "image": "https://m.media-amazon.com/images/I/71tDovoHA+L._SL1500_.jpg"
+  },
+  "4": {
+    "author": "C.S. Lewis",
+    "title": "The Chronicles of Narnia",
+    "ISBN": "978-0060598242",
+    "cover": "Hardcover",
+    "price": 75,
+    "description": "Fourth Item",
+    "ID": "F4",
+    "image": "https://m.media-amazon.com/images/I/91jlAlsTYzL._SL1500_.jpg"
+  },
+  "5": {
+    "author": "Richard A. Knaak",
+    "title": "Day of the Dragon (WarCraft, Book 1)",
+    "ISBN": "978-0671041526",
+    "cover": "Mass Market Paperback",
+    "price": 67,
+    "description": "Fifth Item",
+    "ID": "F5",
+    "image": "https://m.media-amazon.com/images/I/71ODQhzbeaL._SL1500_.jpg"
+  }
+}
