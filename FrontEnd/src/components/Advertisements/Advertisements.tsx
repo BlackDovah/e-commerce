@@ -1,4 +1,3 @@
-
 import { Carousel } from "@mantine/carousel";
 import { useMantineTheme, LoadingOverlay } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
@@ -18,7 +17,7 @@ export function Advertisements() {
   const { setSelectedProduct } = useProduct();
   const handleProductClick = (product: ProductCardProps) => {
     setSelectedProduct(product);
-    navigate("/products");
+    navigate(`/products/${product.title}`);
     console.log(product);
   };
 
@@ -31,8 +30,9 @@ export function Advertisements() {
         setError(null);
       })
       .catch((_error) => {
-        setError('Failed to load books');
-      })      .finally(() => {
+        setError("Failed to load books");
+      })
+      .finally(() => {
         setIsLoading(false);
       });
   }, []);
@@ -56,11 +56,11 @@ export function Advertisements() {
   const slides = Object.entries(books).flatMap(([genre, bookList]) =>
     Object.entries(bookList).map(([id, book]) => (
       <Carousel.Slide key={`${genre}-${id}`}>
-        <ProductCard 
+        <ProductCard
           image={(book as ProductCardProps).image}
           title={(book as ProductCardProps).title}
           author={(book as ProductCardProps).author}
-          cover={(book as ProductCardProps).cover || ''}
+          cover={(book as ProductCardProps).cover || ""}
           price={(book as ProductCardProps).price}
           description={(book as ProductCardProps).description}
           ID={(book as ProductCardProps).ID}

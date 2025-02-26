@@ -6,6 +6,7 @@ import { Router } from "./Router";
 import "./output.css";
 import { ProductProvider } from "./components/Contexts/ProductContext";
 import { theme } from "./theme";
+
 export default function App() {
   return (
     <>

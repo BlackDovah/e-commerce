@@ -13,7 +13,7 @@ import { Footer } from "../PageParts/Footer";
 import { Header } from "../PageParts/Header";
 import { useProduct } from "@/components/Contexts/ProductContext";
 import { ProductDetailsAndPurchase } from "../ProductDetailsAndPurchase/ProductDetailsAndPurchase";
-import { Cart } from "../Cart/Cart";
+import { AddToCartButton } from "../Cart/AddToCartButton";
 export function DetailedProductDisplay() {
   const { selectedProduct } = useProduct();
 
@@ -41,7 +41,7 @@ export function DetailedProductDisplay() {
                     max={99}
                     styles={{ input: { width: "80px" } }}
                   />
-                  <Cart book={selectedProduct} />
+                  <AddToCartButton book={selectedProduct} />
                   <ProductDetailsAndPurchase book={selectedProduct} />
                 </Group>
               </Stack>

@@ -3,7 +3,7 @@ import { ActionIcon, Badge, Card, Group, Image, Text } from "@mantine/core";
 import classes from "./ProductDisplay.module.css";
 import { ProductCardProps } from "@/types/types";
 import { ProductDetailsAndPurchase } from "../ProductDetailsAndPurchase/ProductDetailsAndPurchase";
-import { Cart } from "../Cart/Cart";
+import { AddToCartButton } from "../Cart/AddToCartButton";
 
 export function ProductCard({
   image,
@@ -60,7 +60,7 @@ export function ProductCard({
 
       <Group mt="xs">
         <ProductDetailsAndPurchase book={bookData} />
-        <Cart book={bookData} />
+        <AddToCartButton book={bookData} />
         <ActionIcon variant="default" radius="md" size={36}>
           <IconHeart className={classes.like} stroke={1.5} />
         </ActionIcon>

@@ -13,6 +13,8 @@ import { useEffect, useState } from "react";
 import { Input } from "../BooksFetching/Input";
 import { HeaderNavigationSection } from "./HeaderNavigationSection";
 import { useNavigate } from "react-router-dom";
+import { CartView } from "@/components/Cart/CartView";
+
 
 export function Header() {
   const navigate = useNavigate();
@@ -104,8 +106,9 @@ export function Header() {
           onSearchChange={(value) => setSearchQuery(value)}
           onSearchSubmit={handleSearch}
         />
+        <CartView />
       </Group>
-
+            
       {/* Navigation section */}
       <Box
         visibleFrom="md"
