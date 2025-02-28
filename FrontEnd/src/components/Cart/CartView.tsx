@@ -47,7 +47,10 @@ export function CartView() {
           <Stack gap="md" className="flex-grow overflow-auto">
             {cartItems.map((item) => (
               <Group key={item.ID} justify="space-between" className="w-full">
-                <Link to={`/products/${item.title}`} className="hover:bg-gray-100 w-[70%]">
+                <Link
+                  to={`/products/${item.title}`}
+                  className="hover:bg-gray-100 w-[70%]"
+                >
                   <Group>
                     <Image
                       src={item.image}
@@ -75,9 +78,11 @@ export function CartView() {
                 <Text size="lg" fw={700}>
                   Total: ${total.toFixed(2)}
                 </Text>
-                <Button fullWidth className="mt-4">
-                  Checkout
-                </Button>
+                <Link to="/checkout">
+                  <Button fullWidth className="mt-4">
+                    Checkout
+                  </Button>
+                </Link>
               </Box>
             ) : (
               <Text ta="center">Your cart is empty</Text>

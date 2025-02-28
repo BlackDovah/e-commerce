@@ -30,27 +30,42 @@ export function Footer() {
                 products, and low delivery times.
               </Text>
               <Text className="font-bold">Please consider following us</Text>
-              <Group gap={0} wrap="nowrap">
-                <ActionIcon size="lg" color="white" variant="subtle">
+              <Group gap={6} wrap="nowrap">
+                <ActionIcon
+                  size="xl"
+                  color="#ffffff4D"
+                  variant="filled"
+                  radius="xl"
+                >
                   <IconBrandTwitter
                     style={{ width: rem(18), height: rem(18) }}
                     stroke={1.5}
                   />
                 </ActionIcon>
-                <ActionIcon size="lg" color="white" variant="subtle">
+                <ActionIcon
+                  size="xl"
+                  color="#ffffff4D"
+                  variant="filled"
+                  radius="xl"
+                >
                   <IconBrandYoutube
                     style={{ width: rem(18), height: rem(18) }}
                     stroke={1.5}
                   />
                 </ActionIcon>
-                <ActionIcon size="lg" color="white" variant="subtle">
+                <ActionIcon
+                  size="xl"
+                  color="#ffffff4D"
+                  variant="filled"
+                  radius="xl"
+                >
                   <IconBrandInstagram
                     style={{ width: rem(18), height: rem(18) }}
                     stroke={1.5}
                   />
                 </ActionIcon>
-                <Text>© 2024 All rights reserved.</Text>
               </Group>
+              <Text>© 2024 All rights reserved.</Text>
             </Stack>
             <Stack className="justify-center">
               <Text className="font-bold text-xl">Quick Links</Text>
@@ -61,15 +76,15 @@ export function Footer() {
             </Stack>
             <Stack className="justify-center">
               <Text className="font-bold text-xl">Products</Text>
-              <Text>Cleajour bundles</Text> <Text>Haircare</Text>
+              <Text>Test bundles</Text> <Text>Haircare</Text>
               <Text>Skincare</Text>
             </Stack>
             <Stack className="justify-center">
               <Text className="font-bold text-xl">Contact Us</Text>
               <Text>Cairo, Egypt</Text>
-              <Text>Egypt : 01070544812</Text>
-              <Text>Other Countries : +201070544812</Text>
-              <Text>Info@cleajour.com</Text>
+              <Text>Egypt : 0123456789</Text>
+              <Text>Other Countries : +0123456789</Text>
+              <Text>Info@test.com</Text>
             </Stack>
           </Group>
         </div>

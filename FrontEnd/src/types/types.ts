@@ -59,6 +59,17 @@ export interface FormValues {
   paymentMethod: "visa/credit card" | "cash";
 }
 
+export interface BillingDetails {
+  firstName: string;
+  lastName: string;
+  country: string;
+  region: string;
+  streetAddress: string;
+  billingApartment: string;
+  phone: string;
+  email: string;
+}
+
 export interface ProductCardProps {
   image: string;
   title: string;

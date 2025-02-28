@@ -7,8 +7,6 @@ import {
   Text,
   NumberInput,
 } from "@mantine/core";
-// import { useNavigate, Link } from "react-router-dom";
-// import { Link } from "react-router-dom";
 import { Footer } from "../PageParts/Footer";
 import { Header } from "../PageParts/Header";
 import { useProduct } from "@/components/Contexts/ProductContext";

@@ -1,6 +1,4 @@
 import { Stack, Title, Box } from "@mantine/core";
-// import { useNavigate, Link } from "react-router-dom";
-// import { Link } from "react-router-dom";
 import { Advertisements } from "../Advertisements/Advertisements";
 import { Footer } from "../PageParts/Footer";
 import { Header } from "../PageParts/Header";
