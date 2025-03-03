@@ -26,7 +26,7 @@ describe("CartView", () => {
     render(<CartView />);
     const countElement = screen.getByText("1", { exact: false });
     expect(countElement).toBeInTheDocument();
-  });
+  });   
 
   it("opens cart drawer when cart button is clicked", async () => {
     render(<CartView />);

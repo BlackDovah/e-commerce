@@ -64,7 +64,7 @@ export function CartView() {
             {cartItems.map((item) => (
               <Group key={item.ID} justify="space-between" className="w-full">
                 <Link
-                  to={`/products/${item.title}`}
+                  to={`/product/${item.title}`}
                   className="hover:bg-gray-100 w-[70%]"
                 >
                   <Group>

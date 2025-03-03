@@ -11,7 +11,9 @@ import {
   CloseButton,
 } from "@mantine/core";
 import { fetchBooksByKeyWord } from "@/services/api";
-import { TextInputProps, Book } from "@/types/types";
+import { TextInputProps, ProductCardProps } from "@/types/types";
+import { useProduct } from "../Contexts/ProductContext";
+import { useNavigate } from "react-router-dom";
 
 export function Input({
   searchQuery,
@@ -19,7 +21,11 @@ export function Input({
   onSearchSubmit,
 }: TextInputProps) {
   const [opened, setOpened] = useState(false);
-  const [books, setBooks] = useState<Book[] | null>(null);
+  const [books, setBooks] = useState<ProductCardProps[] | null>(null);
+
+  const { setSelectedProduct } = useProduct();
+  const navigate = useNavigate();
+
   useEffect(() => {
     const loadBooks = async () => {
       try {
@@ -109,6 +115,8 @@ export function Input({
                   onClick={() => {
                     onSearchChange(book.title);
                     onSearchSubmit(book.title);
+                    setSelectedProduct(book);
+                    navigate(`/product/${book.title}`);
                     setOpened(false);
                   }}
                   style={{

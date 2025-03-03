@@ -7,6 +7,7 @@ import {
   Burger,
   Image,
   Drawer,
+  useDirection,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { useEffect, useState } from "react";
@@ -16,13 +17,14 @@ import { useNavigate } from "react-router-dom";
 import { CartView } from "@/components/Cart/CartView";
 
 export function Header() {
+  const { toggleDirection, dir } = useDirection();
   const navigate = useNavigate();
   const handleLogoClick = () => {
     navigate("/");
   };
   const [opened, { open, close }] = useDisclosure();
   const [selectedCategory, setSelectedCategory] = useState<string | undefined>(
-    undefined,
+    undefined
   );
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [submittedQuery, setSubmittedQuery] = useState<
@@ -69,16 +71,34 @@ export function Header() {
       </Box>
 
       {/* Mobile menu and language selector */}
-      <Box className="flex">
+      <Box className="flex justify-between">
         <Burger opened={opened} onClick={open} hiddenFrom="xl" size="lg" />
-        <Button className="absolute right-0" variant="default">
-          <Image
-            src="/images/EgyptFlag.png"
-            alt="logo"
-            className="aspect-square object-contain"
-            fit="contain"
-          />
-          <span>العربية</span>
+        <Button
+          className={`flex ${dir === "ltr" ? "ml-auto" : "mr-auto"}`}
+          variant="default"
+          onClick={toggleDirection}
+        >
+          {dir === "ltr" ? (
+            <>
+              <Image
+                src="/images/EgyptFlag.png"
+                alt="logo"
+                className="aspect-square object-contain"
+                fit="contain"
+              />
+              <span>العربية</span>{" "}
+            </>
+          ) : (
+            <>
+              <Image
+                src="/images/USAFlag.png"
+                alt="logo"
+                className="aspect-square object-contain"
+                fit="contain"
+              />
+              <span>English</span>
+            </>
+          )}
         </Button>
       </Box>
 

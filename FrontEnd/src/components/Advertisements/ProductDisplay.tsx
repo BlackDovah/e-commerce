@@ -42,7 +42,7 @@ export function ProductDisplay() {
   const { setSelectedProduct } = useProduct();
   const handleProductClick = (product: ProductCardProps) => {
     setSelectedProduct(product);
-    navigate(`/products/${product.title}`);
+    navigate(`/product/${product.title}`);
     console.log(product);
   };
 
