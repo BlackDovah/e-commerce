@@ -16,10 +16,39 @@
   "cart": {
     "title": "Cart",
     "remove": "Remove",
-    "checkout": "Checkout"
+    "checkout": "Checkout",
+    "empty": "Your cart is empty",
+    "total": "Total",
+    "quantity": "Quantity"
   },
-  "landingPage" : {
+  "landingPage": {
     "newArrivals": "New Arrivals",
     "featuredProducts": "Featured Products"
+  },
+  "input": "No matches found",
+  "footer": {
+    "description": "We are dedicated to offering the best service, with high quality products, and low delivery times.",
+    "copyright": "Copyright © 2025 All rights reserved.",
+    "request": "Please consider following us",
+    "quickLinks": {
+      "title": "Quick Links",
+      "trackYourOrder": "Track Your Order",
+      "refund&ReturnsPolicy": "Refund & Returns Policy",
+      "terms&Conditions": "Terms & Conditions",
+      "privacyPolicy": "Privacy Policy"
+    },
+    "products": {
+      "title": "Products",
+      "product1": "Test bundles",
+      "product2": "Haircare",
+      "product3": "Skincare"
+    },
+    "contactUs": {
+      "title": "Contact Us",
+      "address": "Cairo, Egypt",
+      "internalPhone": "مصر : 0123456789",
+      "externalPhone": "Other Countries : +0123456789",
+      "email": "Info@test.com"
+    }
   }
 }

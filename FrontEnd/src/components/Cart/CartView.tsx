@@ -79,7 +79,7 @@ export function CartView() {
                     <Box>
                       <Text size="sm">{item.title}</Text>
                       <Text size="xs" c="dimmed">
-                        Quantity: {item.quantity}
+                      {t("cart.quantity")}: {item.quantity}
                       </Text>
                       <Text size="sm">${item.price}</Text>
                     </Box>
@@ -94,7 +94,7 @@ export function CartView() {
             {cartItems.length > 0 ? (
               <Box className="sticky bottom-0 mt-auto">
                 <Text size="lg" fw={700}>
-                  Total: ${total.toFixed(2)}
+                  {t("cart.total")}: ${total.toFixed(2)}
                 </Text>
                 <Link to="/checkout">
                   <Button fullWidth className="mt-4">
@@ -103,7 +103,7 @@ export function CartView() {
                 </Link>
               </Box>
             ) : (
-              <Text ta="center">Your cart is empty</Text>
+              <Text ta="center">{t("cart.empty")}</Text>
             )}
           </Stack>
         </div>

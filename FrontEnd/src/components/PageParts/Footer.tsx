@@ -12,8 +12,10 @@ import {
   IconBrandYoutube,
   IconBrandInstagram,
 } from "@tabler/icons-react";
+import { useTranslation } from "react-i18next";
 
 export function Footer() {
+  const { t } = useTranslation();
   return (
     <div className="bg-[#E07B88] text-white">
       <Container size="xl">
@@ -26,10 +28,9 @@ export function Footer() {
                 className="w-40"
               />
               <Text className="w-auto">
-                We are dedicated to offering the best service, with high quality
-                products, and low delivery times.
+                {t("footer.description")}
               </Text>
-              <Text className="font-bold">Please consider following us</Text>
+              <Text className="font-bold">{t("footer.request")}</Text>
               <Group gap={6} wrap="nowrap">
                 <ActionIcon
                   size="xl"
@@ -65,26 +66,26 @@ export function Footer() {
                   />
                 </ActionIcon>
               </Group>
-              <Text>© 2024 All rights reserved.</Text>
+              <Text>{t("footer.copyright")}</Text>
             </Stack>
             <Stack className="justify-center">
-              <Text className="font-bold text-xl">Quick Links</Text>
-              <Text>Track Your Order</Text>
-              <Text>Refund & Returns Policy</Text>
-              <Text>Terms & Conditions</Text>
-              <Text>Privacy Policy</Text>
+              <Text className="font-bold text-xl">{t("footer.quickLinks.title")}</Text>
+              <Text>{t("footer.quickLinks.trackYourOrder")}</Text>
+              <Text>{t("footer.quickLinks.refund&ReturnsPolicy")}</Text>
+              <Text>{t("footer.quickLinks.terms&Conditions")}</Text>
+              <Text>{t("footer.quickLinks.privacyPolicy")}</Text>
             </Stack>
             <Stack className="justify-center">
-              <Text className="font-bold text-xl">Products</Text>
-              <Text>Test bundles</Text> <Text>Haircare</Text>
-              <Text>Skincare</Text>
+              <Text className="font-bold text-xl">{t("footer.products.title")}</Text>
+              <Text>{t("footer.products.product1")}</Text> <Text>{t("footer.products.product2")}</Text>
+              <Text>{t("footer.products.product3")}</Text>
             </Stack>
             <Stack className="justify-center">
-              <Text className="font-bold text-xl">Contact Us</Text>
-              <Text>Cairo, Egypt</Text>
-              <Text>Egypt : 0123456789</Text>
-              <Text>Other Countries : +0123456789</Text>
-              <Text>Info@test.com</Text>
+              <Text className="font-bold text-xl">{t("footer.contactUs.title")}</Text>
+              <Text>{t("footer.contactUs.address")}</Text>
+              <Text>{t("footer.contactUs.internalPhone")}</Text>
+              <Text>{t("footer.contactUs.externalPhone")}</Text>
+              <Text>{t("footer.contactUs.email")}</Text>
             </Stack>
           </Group>
         </div>
