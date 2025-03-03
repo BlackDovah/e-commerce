@@ -20,6 +20,6 @@ export function AddToCartButton({ book }: ProductDetailsAndPurchaseProps) {
     window.dispatchEvent(new Event(CART_OPEN_EVENT));
 
   };
-
+  
   return <Button onClick={addToCart}>Add to cart</Button>;
 }

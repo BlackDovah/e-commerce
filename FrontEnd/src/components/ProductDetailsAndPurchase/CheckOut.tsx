@@ -19,6 +19,7 @@ import { useForm } from "@mantine/form";
 import { useState } from "react";
 import { Footer } from "../PageParts/Footer";
 import { Header } from "../PageParts/Header";
+import { BottomNavigationSection } from "../PageParts/BottomNavigationSection";
 
 export function CheckOut() {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -205,6 +206,11 @@ export function CheckOut() {
           </Box>
         </Stack>
       </Group>
+      {/* Footer */}
+
+      <Box className="flex sticky bottom-0 w-full justify-center bg-white border-t">
+        <BottomNavigationSection />
+      </Box>
       <Footer />
     </Box>
   );

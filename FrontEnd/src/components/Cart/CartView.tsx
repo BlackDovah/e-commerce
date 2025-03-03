@@ -1,6 +1,6 @@
 import { IconShoppingCart } from "@tabler/icons-react";
 import { Drawer, Button, Box, Group, Image, Stack, Text } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
+import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 import { CartItem } from "@/types/types";
 import { useProduct } from "../Contexts/ProductContext";
 import { useEffect } from "react";
@@ -29,10 +29,26 @@ export function CartView() {
 
   return (
     <>
-      <Button onClick={open} className="rounded-full">
+      <Button
+        onClick={open}
+        className="rounded-full"
+        styles={
+          useMediaQuery("(max-width: 1279px)")
+            ? () => ({
+                root: {
+                  backgroundColor: "white",
+                },
+                label: { color: "black" },
+              })
+            : () => ({
+                root: { backgroundColor: "#B07D43" },
+                label: { color: "white" },
+              })
+        }
+      >
         {" "}
-        {cartItems.length}
-        <IconShoppingCart size={24} />
+        <Box className="[1279px]:text-black">{cartItems.length}</Box>
+        <IconShoppingCart size={24} />{" "}
       </Button>
 
       <Drawer
@@ -41,7 +57,7 @@ export function CartView() {
         onClose={close}
         title="Shopping Cart"
         padding="xl"
-        size="35%"
+        size={useMediaQuery("(min-width: 768px)") ? "35%" : "70%"}
       >
         <div className="flex flex-col h-[calc(100vh-120px)]">
           <Stack gap="md" className="flex-grow overflow-auto">

@@ -20,6 +20,7 @@ import {
   ThemeIcon,
   UnstyledButton,
   useMantineTheme,
+  Stack,
 } from "@mantine/core";
 import classes from "./Header.module.css";
 import { useNavigate } from "react-router-dom";
@@ -87,7 +88,9 @@ export function HeaderNavigationSection() {
       <Box>
         <header className={classes.header}>
           <Group className="justify-between h-full items-center">
-            <Group h="100%" gap={0}>
+            {/* Desktop View */}
+
+            <Group h="100%" gap={0} visibleFrom="xl">
               <button
                 type="button"
                 onClick={handleHomeClick}
@@ -155,6 +158,76 @@ export function HeaderNavigationSection() {
                 Contact us
               </a>
             </Group>
+            {/* Mobile View */}
+
+            <Stack h="100%" hiddenFrom="xl" className="">
+              <button
+                type="button"
+                onClick={handleHomeClick}
+                className={classes.link}
+              >
+                Home
+              </button>
+              <HoverCard
+                width={600}
+                position="bottom"
+                radius="md"
+                shadow="md"
+                withinPortal
+              >
+                <HoverCard.Target>
+                  <a href="#" className={classes.link}>
+                    <Center inline>
+                      <Box component="span" mr={5}>
+                        Shop
+                      </Box>
+                      <IconChevronDown size={16} color={theme.colors.blue[6]} />
+                    </Center>
+                  </a>
+                </HoverCard.Target>
+
+                <HoverCard.Dropdown style={{ overflow: "hidden" }}>
+                  <Group justify="space-between" px="md">
+                    <Text fw={500}>Features</Text>
+                    <Anchor href="#" fz="xs">
+                      View all
+                    </Anchor>
+                  </Group>
+
+                  <Divider my="sm" />
+
+                  <SimpleGrid cols={2} spacing={0}>
+                    {links}
+                  </SimpleGrid>
+
+                  <div className={classes.dropdownFooter}>
+                    <Group justify="space-between">
+                      <div>
+                        <Text fw={500} fz="sm">
+                          Get started
+                        </Text>
+                        <Text size="xs" c="dimmed">
+                          Their food sources have decreased, and their numbers
+                        </Text>
+                      </div>
+                      <Button variant="default">Get started</Button>
+                    </Group>
+                  </div>
+                </HoverCard.Dropdown>
+              </HoverCard>
+              <a href="#" className={classes.link}>
+                About us
+              </a>
+              <a href="#" className={classes.link}>
+                FAQs
+              </a>
+              <a href="#" className={classes.link}>
+                Media
+              </a>
+              <a href="#" className={classes.link}>
+                Contact us
+              </a>
+            </Stack>
           </Group>
         </header>
       </Box>

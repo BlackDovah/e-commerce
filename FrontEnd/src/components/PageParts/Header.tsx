@@ -16,6 +16,7 @@ import { useNavigate } from "react-router-dom";
 import { CartView } from "@/components/Cart/CartView";
 
 export function Header() {
+
   const navigate = useNavigate();
   const handleLogoClick = () => {
     navigate("/");
@@ -56,7 +57,7 @@ export function Header() {
         size="30%"
         padding="md"
         title="Navigation"
-        hiddenFrom="md"
+        hiddenFrom="xl"
       >
         <HeaderNavigationSection />
       </Drawer>
@@ -70,8 +71,11 @@ export function Header() {
 
       {/* Mobile menu and language selector */}
       <Box className="flex">
-        <Burger opened={opened} onClick={open} hiddenFrom="md" size="lg" />
-        <Button className="absolute right-0" variant="default">
+        <Burger opened={opened} onClick={open} hiddenFrom="xl" size="lg" />
+        <Button
+          className="absolute right-0"
+          variant="default"
+        >
           <Image
             src="/images/EgyptFlag.png"
             alt="logo"
@@ -105,14 +109,14 @@ export function Header() {
           onSearchChange={(value) => setSearchQuery(value)}
           onSearchSubmit={handleSearch}
         />
-        <Box className="hidden xl:block">
+        <Box visibleFrom="xl">
           <CartView />
         </Box>
       </Group>
 
       {/* Navigation section */}
       <Box
-        visibleFrom="md"
+        visibleFrom="xl"
         className="flex justify-center border-t border-b sticky top-0 z-10 bg-white"
       >
         <HeaderNavigationSection />

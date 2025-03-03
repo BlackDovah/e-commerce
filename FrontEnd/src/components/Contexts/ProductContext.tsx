@@ -1,12 +1,7 @@
-import { createContext, useContext, useState } from "react";
-import { ProductCardProps, CartItem } from "@/types/types";
+import { createContext, useContext, useState, useEffect } from "react";
+import { ProductCardProps, CartItem, ProductContextType } from "@/types/types";
 
-interface ProductContextType {
-  selectedProduct: ProductCardProps | null;
-  setSelectedProduct: (product: ProductCardProps) => void;
-  cartItems: CartItem[];
-  setCartItems: (items: CartItem[]) => void;
-}
+
 
 const ProductContext = createContext<ProductContextType>({
   selectedProduct: null,
@@ -19,7 +14,14 @@ const ProductContext = createContext<ProductContextType>({
 export function ProductProvider({ children }: { children: React.ReactNode }) {
   const [selectedProduct, setSelectedProduct] =
     useState<ProductCardProps | null>(null);
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+    const [cartItems, setCartItems] = useState<CartItem[]>(() => {
+      const savedCart = localStorage.getItem('cartItems');
+      return savedCart ? JSON.parse(savedCart) : [];
+    });
+  
+    useEffect(() => {
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }, [cartItems]);
 
   return (
     <ProductContext.Provider

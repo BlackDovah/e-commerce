@@ -88,3 +88,10 @@ export interface CartItem {
   price: number;
   quantity: number;
 }
+
+export interface ProductContextType {
+  selectedProduct: ProductCardProps | null;
+  setSelectedProduct: (product: ProductCardProps) => void;
+  cartItems: CartItem[];
+  setCartItems: (items: CartItem[]) => void;
+}

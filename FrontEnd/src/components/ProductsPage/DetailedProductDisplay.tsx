@@ -12,6 +12,8 @@ import { Header } from "../PageParts/Header";
 import { useProduct } from "@/components/Contexts/ProductContext";
 import { ProductDetailsAndPurchase } from "../ProductDetailsAndPurchase/ProductDetailsAndPurchase";
 import { AddToCartButton } from "../Cart/AddToCartButton";
+import { BottomNavigationSection } from "../PageParts/BottomNavigationSection";
+
 export function DetailedProductDisplay() {
   const { selectedProduct } = useProduct();
 
@@ -55,6 +57,9 @@ export function DetailedProductDisplay() {
 
       {/* Footer */}
 
+      <Box className="flex sticky bottom-0 w-full justify-center bg-white border-t">
+        <BottomNavigationSection />
+      </Box>
       <Footer />
     </Box>
   );
