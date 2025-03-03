@@ -2,8 +2,10 @@ import { Group, Box } from "@mantine/core";
 import { CartView } from "../Cart/CartView";
 import classes from "./Header.module.css";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export function BottomNavigationSection() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const handleHomeClick = () => {
@@ -20,7 +22,7 @@ export function BottomNavigationSection() {
               className={classes.link}
               onClick={handleHomeClick}
             >
-              Home
+              {t("navigation.home")}
             </button>
             <button type="button" className={classes.link}>
               <CartView />

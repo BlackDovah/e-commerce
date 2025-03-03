@@ -14,12 +14,14 @@ import { fetchBooksByKeyWord } from "@/services/api";
 import { TextInputProps, ProductCardProps } from "@/types/types";
 import { useProduct } from "../Contexts/ProductContext";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export function Input({
   searchQuery,
   onSearchChange,
   onSearchSubmit,
 }: TextInputProps) {
+  const { t } = useTranslation();
   const [opened, setOpened] = useState(false);
   const [books, setBooks] = useState<ProductCardProps[] | null>(null);
 
@@ -88,7 +90,7 @@ export function Input({
           radius="xl"
           rightSection={Close}
           value={searchQuery}
-          placeholder="Search for products"
+          placeholder={t("search.placeholder")}
           onChange={(e) => {
             onSearchChange(e.target.value);
             setOpened(e.target.value.length > 0);

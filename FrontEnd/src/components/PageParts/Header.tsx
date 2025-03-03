@@ -15,16 +15,25 @@ import { Input } from "../BooksFetching/Input";
 import { HeaderNavigationSection } from "./HeaderNavigationSection";
 import { useNavigate } from "react-router-dom";
 import { CartView } from "@/components/Cart/CartView";
+import { useTranslation } from "react-i18next";
 
 export function Header() {
+  const { t, i18n } = useTranslation();
   const { toggleDirection, dir } = useDirection();
+
+  const toggleLanguage = () => {
+    const newLang = i18n.language === "en" ? "ar" : "en";
+    i18n.changeLanguage(newLang);
+    toggleDirection();
+  };
+
   const navigate = useNavigate();
   const handleLogoClick = () => {
     navigate("/");
   };
   const [opened, { open, close }] = useDisclosure();
   const [selectedCategory, setSelectedCategory] = useState<string | undefined>(
-    undefined
+    undefined,
   );
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [submittedQuery, setSubmittedQuery] = useState<
@@ -57,7 +66,7 @@ export function Header() {
         onClose={close}
         size="30%"
         padding="md"
-        title="Navigation"
+        title={t("navigation.title")}
         hiddenFrom="xl"
       >
         <HeaderNavigationSection />
@@ -66,7 +75,7 @@ export function Header() {
       {/* Purple banner section */}
       <Box className="bg-[#E07B88] py-3">
         <Text className="flex text-lg text-white w-full justify-center">
-          Delivery: 3-5 working days depends on area
+          {t("delivery")}
         </Text>
       </Box>
 
@@ -76,7 +85,7 @@ export function Header() {
         <Button
           className={`flex ${dir === "ltr" ? "ml-auto" : "mr-auto"}`}
           variant="default"
-          onClick={toggleDirection}
+          onClick={toggleLanguage}
         >
           {dir === "ltr" ? (
             <>
@@ -86,7 +95,7 @@ export function Header() {
                 className="aspect-square object-contain"
                 fit="contain"
               />
-              <span>العربية</span>{" "}
+              <span>{t("languageButton")}</span>{" "}
             </>
           ) : (
             <>
@@ -96,7 +105,7 @@ export function Header() {
                 className="aspect-square object-contain"
                 fit="contain"
               />
-              <span>English</span>
+              <span>{t("languageButton")}</span>
             </>
           )}
         </Button>

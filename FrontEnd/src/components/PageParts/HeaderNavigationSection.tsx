@@ -24,6 +24,7 @@ import {
 } from "@mantine/core";
 import classes from "./Header.module.css";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const mockdata = [
   {
@@ -59,6 +60,7 @@ const mockdata = [
 ];
 
 export function HeaderNavigationSection() {
+  const { t } = useTranslation();
   const theme = useMantineTheme();
   const navigate = useNavigate();
   const handleHomeClick = () => {
@@ -96,7 +98,7 @@ export function HeaderNavigationSection() {
                 onClick={handleHomeClick}
                 className={classes.link}
               >
-                Home
+                {t("navigation.home")}
               </button>
               <HoverCard
                 width={600}
@@ -109,7 +111,7 @@ export function HeaderNavigationSection() {
                   <a href="#" className={classes.link}>
                     <Center inline>
                       <Box component="span" mr={5}>
-                        Shop
+                        {t("navigation.shop")}
                       </Box>
                       <IconChevronDown size={16} color={theme.colors.blue[6]} />
                     </Center>
@@ -146,16 +148,16 @@ export function HeaderNavigationSection() {
                 </HoverCard.Dropdown>
               </HoverCard>
               <a href="#" className={classes.link}>
-                About us
+                {t("navigation.aboutUs")}
               </a>
               <a href="#" className={classes.link}>
-                FAQs
+                {t("navigation.FAQs")}
               </a>
               <a href="#" className={classes.link}>
-                Media
+                {t("navigation.Media")}
               </a>
               <a href="#" className={classes.link}>
-                Contact us
+                {t("navigation.contactUs")}
               </a>
             </Group>
             {/* Mobile View */}
@@ -166,7 +168,7 @@ export function HeaderNavigationSection() {
                 onClick={handleHomeClick}
                 className={classes.link}
               >
-                Home
+                {t("navigation.home")}
               </button>
               <HoverCard
                 width={600}
@@ -179,7 +181,7 @@ export function HeaderNavigationSection() {
                   <a href="#" className={classes.link}>
                     <Center inline>
                       <Box component="span" mr={5}>
-                        Shop
+                        {t("navigation.shop")}
                       </Box>
                       <IconChevronDown size={16} color={theme.colors.blue[6]} />
                     </Center>
@@ -216,16 +218,16 @@ export function HeaderNavigationSection() {
                 </HoverCard.Dropdown>
               </HoverCard>
               <a href="#" className={classes.link}>
-                About us
+                {t("navigation.aboutUs")}
               </a>
               <a href="#" className={classes.link}>
-                FAQs
+                {t("navigation.FAQs")}
               </a>
               <a href="#" className={classes.link}>
-                Media
+                {t("navigation.Media")}
               </a>
               <a href="#" className={classes.link}>
-                Contact us
+                {t("navigation.contactUs")}
               </a>
             </Stack>
           </Group>

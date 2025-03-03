@@ -6,8 +6,10 @@ import { useProduct } from "../Contexts/ProductContext";
 import { useEffect } from "react";
 import { CART_OPEN_EVENT } from "@/components/Cart/CartOpenEvents";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export function CartView() {
+  const { t } = useTranslation();
   const [opened, { open, close }] = useDisclosure();
   const { cartItems, setCartItems } = useProduct();
 
@@ -55,7 +57,7 @@ export function CartView() {
         position="right"
         opened={opened}
         onClose={close}
-        title="Shopping Cart"
+        title={t("cart.title")}
         padding="xl"
         size={useMediaQuery("(min-width: 768px)") ? "35%" : "70%"}
       >
@@ -84,7 +86,7 @@ export function CartView() {
                   </Group>
                 </Link>
                 <Button color="red" onClick={() => removeFromCart(item.ID)}>
-                  Remove
+                  {t("cart.remove")}
                 </Button>
               </Group>
             ))}
@@ -96,7 +98,7 @@ export function CartView() {
                 </Text>
                 <Link to="/checkout">
                   <Button fullWidth className="mt-4">
-                    Checkout
+                    {t("cart.checkout")}
                   </Button>
                 </Link>
               </Box>

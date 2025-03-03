@@ -1,0 +1,25 @@
+{
+  "delivery": "Delivery: 3-5 working days depends on area",
+  "navigation": {
+    "title": "Navigation",
+    "home": "Home",
+    "shop": "Shop",
+    "aboutUs": "About us",
+    "FAQs": "FAQs",
+    "Media": "Media",
+    "contactUs": "Contact us"
+  },
+  "languageButton": "العربية",
+  "search": {
+    "placeholder": "Search for products"
+  },
+  "cart": {
+    "title": "Cart",
+    "remove": "Remove",
+    "checkout": "Checkout"
+  },
+  "landingPage" : {
+    "newArrivals": "New Arrivals",
+    "featuredProducts": "Featured Products"
+  }
+}

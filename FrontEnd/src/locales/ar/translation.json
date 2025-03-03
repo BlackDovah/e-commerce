@@ -1,0 +1,25 @@
+{
+  "delivery": "يتم تسليم المنتجات خلال 3-5 أيام عمل حسب المنطقة",
+  "navigation": {
+    "title": "التنقل",
+    "home": "الرئيسية",
+    "shop": "المنتجات",
+    "aboutUs": "من نحن",
+    "FAQs": "الأسئلة المتكررة",
+    "Media": "المدونة",
+    "contactUs": "اتصل بنا"
+  },
+  "languageButton": "English",
+  "search": {
+    "placeholder": "البحث عن المنتجات"
+  },
+  "cart": {
+    "title": "سلة المشتريات",
+    "remove": "ازالة",
+    "checkout": "إتمام الطلب"
+  },
+  "landingPage": {
+    "newArrivals": "وصل حديثاً",
+    "featuredProducts": "المنتجات المعروضة"
+  }
+}

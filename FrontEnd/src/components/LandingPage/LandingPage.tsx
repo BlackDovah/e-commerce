@@ -4,8 +4,10 @@ import { Footer } from "../PageParts/Footer";
 import { Header } from "../PageParts/Header";
 import { ProductDisplay } from "../Advertisements/ProductDisplay";
 import { BottomNavigationSection } from "../PageParts/BottomNavigationSection";
+import { useTranslation } from "react-i18next";
 
 export function LandingPage() {
+  const { t } = useTranslation();
   return (
     <Box>
       <Header />
@@ -15,14 +17,14 @@ export function LandingPage() {
         <Box>
           <Box className="justify-center items-center 2xl:px-80 max-2xl:px-20 pt-20">
             <Title className="text-4xl max-lg:text-3xl max-md:text-2xl mt-8 mb-8 justify-center">
-              New Arrivals
+              {t("landingPage.newArrivals")}
             </Title>
             <ProductDisplay />
           </Box>
 
           <Box className="justify-center items-center 2xl:px-80 max-2xl:px-20 py-20">
             <Title className="text-4xl max-lg:text-3xl max-md:text-2xl mt-8 mb-8 justify-center">
-              Featured Books
+              {t("landingPage.featuredProducts")}
             </Title>
             <Advertisements />
           </Box>
