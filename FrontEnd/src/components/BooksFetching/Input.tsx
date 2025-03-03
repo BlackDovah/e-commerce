@@ -38,7 +38,7 @@ export function Input({
 
   const highlightKeyword = (
     text: string,
-    keyword: string | number | undefined
+    keyword: string | number | undefined,
   ) => {
     if (!keyword) {
       return text;
@@ -54,7 +54,7 @@ export function Input({
         </span>
       ) : (
         part
-      )
+      ),
     );
   };
 

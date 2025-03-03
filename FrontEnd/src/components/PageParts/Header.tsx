@@ -16,14 +16,13 @@ import { useNavigate } from "react-router-dom";
 import { CartView } from "@/components/Cart/CartView";
 
 export function Header() {
-
   const navigate = useNavigate();
   const handleLogoClick = () => {
     navigate("/");
   };
   const [opened, { open, close }] = useDisclosure();
   const [selectedCategory, setSelectedCategory] = useState<string | undefined>(
-    undefined
+    undefined,
   );
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [submittedQuery, setSubmittedQuery] = useState<
@@ -72,10 +71,7 @@ export function Header() {
       {/* Mobile menu and language selector */}
       <Box className="flex">
         <Burger opened={opened} onClick={open} hiddenFrom="xl" size="lg" />
-        <Button
-          className="absolute right-0"
-          variant="default"
-        >
+        <Button className="absolute right-0" variant="default">
           <Image
             src="/images/EgyptFlag.png"
             alt="logo"

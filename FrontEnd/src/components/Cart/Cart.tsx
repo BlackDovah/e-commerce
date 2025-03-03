@@ -13,7 +13,7 @@ export function Cart({ book }: ProductDetailsAndPurchaseProps) {
 
     if (existingItem) {
       const updatedItems = cartItems.map((item) =>
-        item.ID === book.ID ? { ...item, quantity: item.quantity + 1 } : item
+        item.ID === book.ID ? { ...item, quantity: item.quantity + 1 } : item,
       );
       setCartItems(updatedItems);
     } else {
@@ -29,7 +29,7 @@ export function Cart({ book }: ProductDetailsAndPurchaseProps) {
 
   const total = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
-    0
+    0,
   );
 
   return (

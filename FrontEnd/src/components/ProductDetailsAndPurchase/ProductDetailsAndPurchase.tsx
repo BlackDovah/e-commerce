@@ -32,7 +32,6 @@ export function ProductDetailsAndPurchase({
     open();
   };
 
-
   const form = useForm<FormValues>({
     initialValues: {
       name: "",
@@ -68,7 +67,7 @@ export function ProductDetailsAndPurchase({
     try {
       // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 2000));
-      // eslint-disable-next-line no-console
+
       console.log("Processing payment:", values);
       close();
     } catch (err) {
@@ -80,10 +79,10 @@ export function ProductDetailsAndPurchase({
 
   const currentYear = new Date().getFullYear();
   const years: string[] = Array.from({ length: 10 }, (_, i) =>
-    String(currentYear + i)
+    String(currentYear + i),
   );
   const months: string[] = Array.from({ length: 12 }, (_, i) =>
-    String(i + 1).padStart(2, "0")
+    String(i + 1).padStart(2, "0"),
   );
 
   const formatCardNumber = (value: string): string => {
@@ -179,7 +178,7 @@ export function ProductDetailsAndPurchase({
                   {...form.getInputProps("cardNumber")}
                   onChange={(event) => {
                     const formatted = formatCardNumber(
-                      event.currentTarget.value
+                      event.currentTarget.value,
                     );
                     form.setFieldValue("cardNumber", formatted);
                   }}

@@ -15,7 +15,6 @@ export function ProductCard({
   ID,
   onImageClick,
 }: ProductCardProps) {
-
   const bookData = {
     image,
     title,

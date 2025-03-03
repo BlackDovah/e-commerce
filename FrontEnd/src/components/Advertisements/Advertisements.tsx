@@ -67,7 +67,7 @@ export function Advertisements() {
           onImageClick={() => handleProductClick(book as ProductCardProps)}
         />
       </Carousel.Slide>
-    ))
+    )),
   );
 
   // Carousel component with responsive settings

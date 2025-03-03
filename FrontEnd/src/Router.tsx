@@ -1,10 +1,10 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { HomePage } from '@/pages/Home.page';
-import { DetailedProductsPage } from '@/pages/DetailedProducts.Page';
-import { CheckOutPage } from '@/pages/CheckOut.Page';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { HomePage } from "@/pages/Home.page";
+import { DetailedProductsPage } from "@/pages/DetailedProducts.Page";
+import { CheckOutPage } from "@/pages/CheckOut.Page";
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <HomePage />,
   },
   {
@@ -12,9 +12,9 @@ const router = createBrowserRouter([
     element: <DetailedProductsPage />,
   },
   {
-    path: '/checkout',
+    path: "/checkout",
     element: <CheckOutPage />,
-  }
+  },
 ]);
 
 export function Router() {

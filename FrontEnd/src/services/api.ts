@@ -11,11 +11,13 @@ export const fetchBooks = async (): Promise<ProductCardProps> => {
 };
 
 export const fetchBooksByCategory = async (category: string | undefined) => {
-    const response = await api.get(`/books/category/${category}`);
-    return response.data;
+  const response = await api.get(`/books/category/${category}`);
+  return response.data;
 };
 
-export const fetchBooksByKeyWord = async (KeyWord: string | number | undefined) => {
+export const fetchBooksByKeyWord = async (
+  KeyWord: string | number | undefined,
+) => {
   const response = await api.get(`/books/keyword/${KeyWord}`);
   return response.data;
 };

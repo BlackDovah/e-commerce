@@ -63,7 +63,7 @@ export function CheckOut() {
     try {
       // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 2000));
-      // eslint-disable-next-line no-console
+
       console.log("Processing payment:", values);
       close();
     } catch (err) {
@@ -76,7 +76,7 @@ export function CheckOut() {
   const { cartItems } = useProduct();
   const total = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
-    0
+    0,
   );
 
   return (

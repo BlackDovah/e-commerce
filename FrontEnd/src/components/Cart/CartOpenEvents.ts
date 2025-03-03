@@ -1,1 +1,1 @@
-export const CART_OPEN_EVENT = 'openCartDrawer';
+export const CART_OPEN_EVENT = "openCartDrawer";

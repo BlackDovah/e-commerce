@@ -2,7 +2,7 @@ import { createContext, useState, useContext } from "react";
 import { BooksContextProps } from "@/types/types";
 
 export const BooksContext = createContext<BooksContextProps | undefined>(
-  undefined
+  undefined,
 );
 
 export const BooksContextProvider = ({
@@ -11,10 +11,12 @@ export const BooksContextProvider = ({
   children: React.ReactNode;
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string | undefined>(
-    undefined
+    undefined,
   );
   const [searchQuery, setSearchQuery] = useState<string | undefined>(undefined);
-  const [submittedQuery, setSubmittedQuery] = useState<string | number | undefined>(undefined);
+  const [submittedQuery, setSubmittedQuery] = useState<
+    string | number | undefined
+  >(undefined);
   return (
     <BooksContext.Provider
       value={{
