@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Center,
   Group,
   Text,
@@ -10,12 +9,18 @@ import {
   useDirection,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { useEffect, useState } from "react";
+import { useEffect, memo } from "react";
 import { Input } from "../BooksFetching/Input";
 import { HeaderNavigationSection } from "./HeaderNavigationSection";
 import { useNavigate } from "react-router-dom";
 import { CartView } from "@/components/Cart/CartView";
 import { useTranslation } from "react-i18next";
+import { LanguageToggle } from "@/components/Utilities/LanguageToggle";
+import { useSearch } from "../Contexts/SearchContext";
+
+const MemoizedHeaderNavigationSection = memo(HeaderNavigationSection);
+const MemoizedCartView = memo(CartView);
+const MemoizedInput = memo(Input);
 
 export function Header() {
   const { t, i18n } = useTranslation();
@@ -31,18 +36,15 @@ export function Header() {
   const handleLogoClick = () => {
     navigate("/");
   };
-  const [opened, { open, close }] = useDisclosure();
-  const [selectedCategory, setSelectedCategory] = useState<string | undefined>(
-    undefined,
-  );
-  const [searchQuery, setSearchQuery] = useState<string>("");
-  const [submittedQuery, setSubmittedQuery] = useState<
-    string | number | undefined
-  >("");
 
-  const handleSearch = (search: string | number | undefined) => {
-    setSubmittedQuery(search);
-  };
+  const {
+    submittedQuery,
+    setSubmittedQuery,
+    selectedCategory,
+    setSelectedCategory,
+  } = useSearch();
+
+  const [opened, { open, close }] = useDisclosure();
 
   useEffect(() => {
     if (selectedCategory !== "Choose Genre") {
@@ -69,7 +71,7 @@ export function Header() {
         title={t("navigation.title")}
         hiddenFrom="xl"
       >
-        <HeaderNavigationSection />
+        <MemoizedHeaderNavigationSection />
       </Drawer>
 
       {/* Purple banner section */}
@@ -82,33 +84,7 @@ export function Header() {
       {/* Mobile menu and language selector */}
       <Box className="flex justify-between">
         <Burger opened={opened} onClick={open} hiddenFrom="xl" size="lg" />
-        <Button
-          className={`flex ${dir === "ltr" ? "ml-auto" : "mr-auto"}`}
-          variant="default"
-          onClick={toggleLanguage}
-        >
-          {dir === "ltr" ? (
-            <>
-              <Image
-                src="/images/EgyptFlag.png"
-                alt="logo"
-                className="aspect-square object-contain"
-                fit="contain"
-              />
-              <span>{t("languageButton")}</span>{" "}
-            </>
-          ) : (
-            <>
-              <Image
-                src="/images/USAFlag.png"
-                alt="logo"
-                className="aspect-square object-contain"
-                fit="contain"
-              />
-              <span>{t("languageButton")}</span>
-            </>
-          )}
-        </Button>
+        <LanguageToggle dir={dir} toggleLanguage={toggleLanguage} t={t} />
       </Box>
 
       {/* Logo and search section */}
@@ -117,8 +93,6 @@ export function Header() {
           <button
             type="button"
             onClick={() => {
-              setSearchQuery("");
-              setSubmittedQuery("");
               handleLogoClick();
             }}
             className="flex w-full justify-start"
@@ -126,16 +100,13 @@ export function Header() {
             <Image
               className="pl-40 xl:pl-28 max-md:pl-20 max-sm:pl-0"
               src="/images/shopping-cart-with-dollar-sign-5399ld.png"
+              loading="eager"
             />
           </button>
         </Center>
-        <Input
-          searchQuery={searchQuery}
-          onSearchChange={(value) => setSearchQuery(value)}
-          onSearchSubmit={handleSearch}
-        />
+        <MemoizedInput />
         <Box visibleFrom="xl">
-          <CartView />
+          <MemoizedCartView />
         </Box>
       </Group>
 

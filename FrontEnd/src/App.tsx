@@ -7,6 +7,7 @@ import {
   DirectionProvider,
 } from "@mantine/core";
 import { ProductProvider } from "./components/Contexts/ProductContext";
+import { SearchProvider } from "./components/Contexts/SearchContext";
 import { Router } from "./Router";
 import { theme } from "./theme";
 import "./output.css";
@@ -17,9 +18,11 @@ export default function App() {
       <ColorSchemeScript forceColorScheme="light" />
       <DirectionProvider>
         <MantineProvider forceColorScheme="light" theme={theme}>
-          <ProductProvider>
-            <Router />
-          </ProductProvider>
+          <SearchProvider>
+            <ProductProvider>
+              <Router />
+            </ProductProvider>
+          </SearchProvider>
         </MantineProvider>
       </DirectionProvider>
     </>

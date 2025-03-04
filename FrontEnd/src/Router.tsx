@@ -1,7 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import { HomePage } from "@/pages/Home.page";
-import { DetailedProductsPage } from "@/pages/DetailedProducts.Page";
-import { CheckOutPage } from "@/pages/CheckOut.Page";
+const DetailedProductsPage = lazy(
+  () => import("@/pages/DetailedProducts.Page"),
+);
+const CheckOutPage = lazy(() => import("@/pages/CheckOut.Page"));
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -9,11 +13,19 @@ const router = createBrowserRouter([
   },
   {
     path: `/product/:productTitle`,
-    element: <DetailedProductsPage />,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <DetailedProductsPage />,
+      </Suspense>
+    ),
   },
   {
     path: "/checkout",
-    element: <CheckOutPage />,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <CheckOutPage />,
+      </Suspense>
+    ),
   },
 ]);
 

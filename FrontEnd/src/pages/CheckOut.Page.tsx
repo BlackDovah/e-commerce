@@ -1,6 +1,6 @@
 import { CheckOut } from "@/components/ProductDetailsAndPurchase/CheckOut";
 
-export function CheckOutPage() {
+export default function CheckOutPage() {
   return (
     <>
       <CheckOut />

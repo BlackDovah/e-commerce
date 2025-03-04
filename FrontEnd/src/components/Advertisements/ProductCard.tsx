@@ -33,6 +33,7 @@ export function ProductCard({
             src={image}
             alt={title}
             className="h-[300px] w-[100%] justify-center items-center"
+            loading="lazy"
           />
         </button>
       </Card.Section>

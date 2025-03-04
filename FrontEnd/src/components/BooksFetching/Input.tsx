@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { IconX } from "@tabler/icons-react";
 import {
   TextInput,
@@ -11,22 +11,52 @@ import {
   CloseButton,
 } from "@mantine/core";
 import { fetchBooksByKeyWord } from "@/services/api";
-import { TextInputProps, ProductCardProps } from "@/types/types";
+import { ProductCardProps } from "@/types/types";
 import { useProduct } from "../Contexts/ProductContext";
+import { useSearch } from "../Contexts/SearchContext";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-export function Input({
-  searchQuery,
-  onSearchChange,
-  onSearchSubmit,
-}: TextInputProps) {
-  const { t } = useTranslation();
-  const [opened, setOpened] = useState(false);
-  const [books, setBooks] = useState<ProductCardProps[] | null>(null);
-
+export function Input() {
+  const { searchQuery, setSearchQuery, setSubmittedQuery } = useSearch();
   const { setSelectedProduct } = useProduct();
   const navigate = useNavigate();
+  const [opened, setOpened] = useState(false);
+  const handleSearch = (search: string | number | undefined) => {
+    setSubmittedQuery(search);
+  };
+
+  const handleSearchChange = useCallback(
+    (value: string) => {
+      setSearchQuery(value);
+      setOpened(value.length > 0);
+    },
+    [setSearchQuery],
+  );
+
+  const handleSearchSubmit = useCallback(
+    (query: string) => {
+      setSubmittedQuery(query);
+      setOpened(false);
+    },
+    [setSubmittedQuery],
+  );
+
+  const handleProductSelect = useCallback(
+    (book: ProductCardProps) => {
+      setSearchQuery(book.title);
+      handleSearchSubmit(book.title);
+      handleSearch(book.title);
+      setSelectedProduct(book);
+      navigate(`/product/${book.title}`);
+      setOpened(false);
+    },
+    [navigate, setSelectedProduct, setSearchQuery, handleSearchSubmit],
+  );
+
+  const { t } = useTranslation();
+
+  const [books, setBooks] = useState<ProductCardProps[] | null>(null);
 
   useEffect(() => {
     const loadBooks = async () => {
@@ -71,7 +101,7 @@ export function Input({
       variant="transparent"
       className="bg-[#B07D43] rounded-full size-[90%]"
       aria-label="Empty Search Field"
-      onClick={() => onSearchChange("")}
+      onClick={() => setSearchQuery("")}
       icon={<IconX style={{ color: "white" }} />}
     />
   );
@@ -91,14 +121,10 @@ export function Input({
           rightSection={Close}
           value={searchQuery}
           placeholder={t("search.placeholder")}
-          onChange={(e) => {
-            onSearchChange(e.target.value);
-            setOpened(e.target.value.length > 0);
-          }}
+          onChange={(e) => handleSearchChange(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
-              onSearchSubmit(searchQuery);
-              setOpened(false);
+              handleSearchSubmit(searchQuery);
             }
           }}
         />
@@ -114,13 +140,7 @@ export function Input({
                   preventGrowOverflow={false}
                   wrap="nowrap"
                   key={index}
-                  onClick={() => {
-                    onSearchChange(book.title);
-                    onSearchSubmit(book.title);
-                    setSelectedProduct(book);
-                    navigate(`/product/${book.title}`);
-                    setOpened(false);
-                  }}
+                  onClick={() => handleProductSelect(book)}
                   style={{
                     cursor: "pointer",
                     padding: "4px 8px",

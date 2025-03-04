@@ -1,38 +1,31 @@
 import { IconShoppingCart } from "@tabler/icons-react";
 import { Drawer, Button, Box, Group, Image, Stack, Text } from "@mantine/core";
-import { useDisclosure, useMediaQuery } from "@mantine/hooks";
+import { useMediaQuery } from "@mantine/hooks";
 import { CartItem } from "@/types/types";
 import { useProduct } from "../Contexts/ProductContext";
-import { useEffect } from "react";
-import { CART_OPEN_EVENT } from "@/components/Cart/CartOpenEvents";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 export function CartView() {
   const { t } = useTranslation();
-  const [opened, { open, close }] = useDisclosure();
-  const { cartItems, setCartItems } = useProduct();
+  const { isCartOpen, setIsCartOpen, cartItems, setCartItems } = useProduct();
 
-  useEffect(() => {
-    const handleOpen = () => open();
-    window.addEventListener(CART_OPEN_EVENT, handleOpen);
-    return () => window.removeEventListener(CART_OPEN_EVENT, handleOpen);
-  }, [open]);
 
   const removeFromCart = (ID: string) => {
     const updatedItems = cartItems.filter((item: CartItem) => item.ID !== ID);
     setCartItems(updatedItems);
   };
 
-  const total = cartItems.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0,
+  const total = useMemo(
+    () => cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0),
+    [cartItems],
   );
 
   return (
     <>
       <Button
-        onClick={open}
+        onClick={() => setIsCartOpen(true)}
         className="rounded-full"
         styles={
           useMediaQuery("(max-width: 1279px)")
@@ -55,8 +48,8 @@ export function CartView() {
 
       <Drawer
         position="right"
-        opened={opened}
-        onClose={close}
+        opened={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
         title={t("cart.title")}
         padding="xl"
         size={useMediaQuery("(min-width: 768px)") ? "35%" : "70%"}
@@ -79,7 +72,7 @@ export function CartView() {
                     <Box>
                       <Text size="sm">{item.title}</Text>
                       <Text size="xs" c="dimmed">
-                      {t("cart.quantity")}: {item.quantity}
+                        {t("cart.quantity")}: {item.quantity}
                       </Text>
                       <Text size="sm">${item.price}</Text>
                     </Box>

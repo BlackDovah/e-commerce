@@ -94,4 +94,6 @@ export interface ProductContextType {
   setSelectedProduct: (product: ProductCardProps) => void;
   cartItems: CartItem[];
   setCartItems: (items: CartItem[]) => void;
+  isCartOpen: boolean;
+  setIsCartOpen: (isOpen: boolean) => void;
 }
