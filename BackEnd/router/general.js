@@ -8,40 +8,21 @@ const public_users = express.Router();
 
 let books = {};
 
-function loadBooks() {
-  const booksFolder = path.join(__dirname, 'Books');
+function loadBooks(language = 'en') {
+  const booksFolder = path.join(__dirname, 'Books', language);
   const files = fs.readdirSync(booksFolder);
+  const languageBooks = {};
 
   files.forEach((file) => {
     if (file.endsWith('.json')) {
       const category = path.basename(file, '.json');
       const filePath = path.join(booksFolder, file);
       const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-      books[category] = data;
+      languageBooks[category] = data;
     }
   });
+  return languageBooks;
 }
-
-loadBooks();
-
-// Helper function to search through nested books object
-function searchBooks(criteria, value) {
-  const results = [];
-  Object.keys(books).forEach(category => {
-    const categoryBooks = books[category];
-    Object.keys(categoryBooks).forEach(bookId => {
-      const book = categoryBooks[bookId];
-      if (book[criteria].toLowerCase().includes(value.toLowerCase())) {
-        results.push({
-          ...book,
-          category,
-          id: bookId
-        });
-      }
-    });
-  });
-  return results;
-};
 
 function searchBooksWithKeyWord(keyword) {
   const filteredBooks = [];
@@ -51,13 +32,13 @@ function searchBooksWithKeyWord(keyword) {
       const foundBook = book;
       if (regex.test(foundBook.title)) {
         foundBook.field = 'title';
-        filteredBooks.push( foundBook );
+        filteredBooks.push(foundBook);
       } else if (regex.test(foundBook.author)) {
         foundBook.field = 'author';
-        filteredBooks.push( foundBook );
+        filteredBooks.push(foundBook);
       } else if (regex.test(foundBook.ISBN)) {
         foundBook.field = 'ISBN';
-        filteredBooks.push( foundBook );
+        filteredBooks.push(foundBook);
       }
     });
   })
@@ -81,7 +62,12 @@ public_users.post("/register", (req, res) => {
 
 // Get the book list available in the shop
 public_users.get('/books', (req, res) => {
+  const language = req.query.lang || 'en';
+  books = loadBooks(language);
+
+
   const get_books = new Promise((resolve, reject) => {
+    const books = loadBooks(language);
     if (Object.keys(books).length > 0) {
       resolve(books);
     } else {
@@ -103,6 +89,8 @@ public_users.get('/books', (req, res) => {
 // Get all books based on category
 public_users.get('/books/category/:category', (req, res) => {
   const category = req.params.category;
+  const language = req.query.lang || 'en';
+  books = loadBooks(language);
 
   const get_books = new Promise((resolve, reject) => {
     const foundBooks = books[category.charAt(0).toUpperCase() + category.slice(1)];
@@ -127,11 +115,13 @@ public_users.get('/books/category/:category', (req, res) => {
 // Get all books based on a key word
 public_users.get('/books/keyword/:keyword', (req, res) => {
   const keyWord = req.params.keyword;
+  const language = req.query.lang || 'en';
+  books = loadBooks(language);
 
   const get_books = new Promise((resolve, reject) => {
     const foundBooks = searchBooksWithKeyWord(keyWord);
     if (Object.keys(foundBooks).length > 0) {
-      resolve( foundBooks );
+      resolve(foundBooks);
     } else {
       reject(new Error(`No books found with the keyword "${keyWord}"`));
     }

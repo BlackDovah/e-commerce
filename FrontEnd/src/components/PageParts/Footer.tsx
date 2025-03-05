@@ -81,7 +81,7 @@ export function Footer() {
               </Text>
               <Text>{t("footer.products.product1")}</Text>{" "}
               <Text>{t("footer.products.product2")}</Text>
-              <Text>{t("footer.products.product3")}</Text>
+              <Text>{t("footer.products.product3")}</Text>              
             </Stack>
             <Stack className="justify-center">
               <Text className="font-bold text-xl">

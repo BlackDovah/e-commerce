@@ -18,10 +18,12 @@ import { useDisclosure } from "@mantine/hooks";
 import { IconAlertCircle } from "@tabler/icons-react";
 import { FormValues, ProductDetailsAndPurchaseProps } from "@/types/types";
 import { useProduct } from "../Contexts/ProductContext";
+import { useTranslation } from "react-i18next";
 
 export function ProductDetailsAndPurchase({
   book,
 }: ProductDetailsAndPurchaseProps) {
+  const { t } = useTranslation();
   const [opened, { open, close }] = useDisclosure(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
@@ -93,13 +95,13 @@ export function ProductDetailsAndPurchase({
   return (
     <>
       <Button onClick={handleQuickPurchase} variant="filled">
-        Quick purchase
+        {t("paymentModal.quickPurchase")}
       </Button>
 
       <Modal
         opened={opened}
         onClose={close}
-        title={<Title order={3}>Complete your purchase</Title>}
+        title={<Title order={3}>{t("paymentModal.completeYourPurchase")}</Title>}
         size="lg"
       >
         <form onSubmit={form.onSubmit(handleSubmit)}>
@@ -119,12 +121,12 @@ export function ProductDetailsAndPurchase({
                 <Stack gap="xs">
                   <Title order={3}>{book.title}</Title>
                   <Text size="sm" color="dimmed">
-                    By {book.author}{" "}
+                    {t("paymentModal.by")} {book.author}{" "}
                     <span className="italic">- {book.cover}</span>
                   </Text>
                   <Group gap="xs">
                     <Select
-                      label="Payment Method"
+                      label={t("paymentModal.paymentMethod")}
                       data={[
                         {
                           value: "visa/credit card",
@@ -152,7 +154,7 @@ export function ProductDetailsAndPurchase({
             {/* Customer Details */}
             <Paper shadow="xs" p="md" radius="md" withBorder>
               <Stack gap="md">
-                <Title order={4}>Customer Information</Title>
+                <Title order={4}>{t("paymentModal.customerInformation")}</Title>
                 <TextInput
                   label="Email"
                   placeholder="your@email.com"
@@ -164,7 +166,7 @@ export function ProductDetailsAndPurchase({
             {/* Payment Form Section */}
             <Paper shadow="xs" p="md" radius="md" withBorder>
               <Stack gap="md">
-                <Title order={4}>Payment Details</Title>
+                <Title order={4}>{t("paymentModal.paymentDetails")}</Title>
 
                 <TextInput
                   label="Name on card"

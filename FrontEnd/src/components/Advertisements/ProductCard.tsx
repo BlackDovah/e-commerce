@@ -4,6 +4,7 @@ import classes from "./ProductDisplay.module.css";
 import { ProductCardProps } from "@/types/types";
 import { ProductDetailsAndPurchase } from "../ProductDetailsAndPurchase/ProductDetailsAndPurchase";
 import { AddToCartButton } from "../Cart/AddToCartButton";
+import { useTranslation } from "react-i18next";
 
 export function ProductCard({
   image,
@@ -24,6 +25,7 @@ export function ProductCard({
     description,
     ID,
   };
+  const { t } = useTranslation();
 
   return (
     <Card withBorder radius="md" p="md" className="h-[100%] w-[100%]">
@@ -51,7 +53,7 @@ export function ProductCard({
 
       <Card.Section className={classes.section}>
         <Text mt="md" className={classes.label} c="dimmed">
-          At the fair price of :
+          {t("productCard.price")}
         </Text>
         <Group gap={7} mt={5} className="text-[#B07D43] font-bold">
           {price}

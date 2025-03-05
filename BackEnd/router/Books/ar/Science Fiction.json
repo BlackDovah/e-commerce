@@ -1,0 +1,53 @@
+{
+  "1": {
+    "author": "جورج لوكاس",
+    "title": "حرب النجوم: من مغامرات لوك سكاي ووكر",
+    "ISBN": "0-345-26061-9",
+    "cover": "غلاف ورقي عادي",
+    "price": 50,
+    "description": "العنصر الأول",
+    "ID": "S1",
+    "image": "https://m.media-amazon.com/images/I/81H84LgeESL._SL1450_.jpg"
+  },
+  "2": {
+    "author": "آلان دين فوستر",
+    "title": "حرب النجوم: شظية عين العقل",
+    "ISBN": "978-0345320230",
+    "cover": "غلاف ورقي عادي",
+    "price": 40,
+    "description": "العنصر الثاني",
+    "ID": "S2",
+    "image": "https://m.media-amazon.com/images/I/71MD0zVWLHL._SL1200_.jpg"
+  },
+  "3": {
+    "author": "ماثيو ستوفر",
+    "title": "حرب النجوم: نقطة التحطم",
+    "ISBN": "978-0593358788",
+    "cover": "غلاف ورقي",
+    "price": 100,
+    "description": "العنصر الثالث",
+    "ID": "S3",
+    "image": "https://m.media-amazon.com/images/I/81Pc16GQNNL._SL1500_.jpg"
+  },
+  "4": {
+    "author": "ماري شيلي",
+    "title": "فرانكنشتاين: النسخة الأصلية 1831",
+    "ISBN": "979-8681188445",
+    "cover": "غلاف ورقي",
+    "price": 75,
+    "description": "العنصر الرابع",
+    "ID": "S4",
+    "image": "https://m.media-amazon.com/images/I/61UtP0uU2GL._SL1500_.jpg"
+  },
+  "5": {
+    "author": "فرانك هربرت",
+    "title": "ديون: الرواية المصورة، الكتاب الأول: ديون: الكتاب 1 (المجلد 1)",
+    "ISBN": "978-1419731501",
+    "cover": "غلاف صلب",
+    "price": 67,
+    "description": "العنصر الخامس",
+    "ID": "S5",
+    "image": "https://m.media-amazon.com/images/I/71lwUXdZJqL._SL1481_.jpg"
+  }
+}
+

@@ -1,0 +1,53 @@
+{
+  "1": {
+    "author": "ج.ر.ر. تولكين",
+    "title": "سيد الخواتم: رفقة الخاتم",
+    "ISBN": "978-0547928210",
+    "cover": "غلاف ورقي",
+    "price": 50,
+    "description": "العنصر الأول",
+    "ID": "F1",
+    "image": "https://m.media-amazon.com/images/I/71Ep7UNeTtL._SL1500_.jpg"
+  },
+  "2": {
+    "author": "ج.ر.ر. تولكين",
+    "title": "سيد الخواتم: البرجان",
+    "ISBN": "978-0547928203",
+    "cover": "غلاف ورقي",
+    "price": 40,
+    "description": "العنصر الثاني",
+    "ID": "F2",
+    "image": "https://m.media-amazon.com/images/I/71FXalNQFtL._SL1500_.jpg"
+  },
+  "3": {
+    "author": "ج.ر.ر. تولكين",
+    "title": "سيد الخواتم: عودة الملك",
+    "ISBN": "978-0547928197",
+    "cover": "غلاف ورقي",
+    "price": 100,
+    "description": "العنصر الثالث",
+    "ID": "F3",
+    "image": "https://m.media-amazon.com/images/I/71tDovoHA+L._SL1500_.jpg"
+  },
+  "4": {
+    "author": "سي.إس. لويس",
+    "title": "وقائع نارنيا",
+    "ISBN": "978-0060598242",
+    "cover": "غلاف صلب",
+    "price": 75,
+    "description": "العنصر الرابع",
+    "ID": "F4",
+    "image": "https://m.media-amazon.com/images/I/91jlAlsTYzL._SL1500_.jpg"
+  },
+  "5": {
+    "author": "ريتشارد أ. كناك",
+    "title": "يوم التنين (عالم وركرافت، الكتاب الأول)",
+    "ISBN": "978-0671041526",
+    "cover": "غلاف ورقي عادي",
+    "price": 67,
+    "description": "العنصر الخامس",
+    "ID": "F5",
+    "image": "https://m.media-amazon.com/images/I/71ODQhzbeaL._SL1500_.jpg"
+  }
+}
+

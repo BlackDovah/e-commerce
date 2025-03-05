@@ -2,17 +2,14 @@ import { Carousel } from "@mantine/carousel";
 import { useMantineTheme, LoadingOverlay } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { ProductCardProps } from "@/types/types";
-import { fetchBooks } from "@/services/api";
-import { useState, useEffect } from "react";
 import { ProductCard } from "./ProductCard";
 import { useNavigate } from "react-router-dom";
 import { useProduct } from "../Contexts/ProductContext";
+import { useBooks } from "../Contexts/BooksContext";
 
 export function Advertisements() {
   // State management for books data, loading state and error handling
-  const [books, setBooks] = useState<ProductCardProps>();
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const { books, isLoading, error } = useBooks();
   const navigate = useNavigate();
   const { setSelectedProduct } = useProduct();
   const handleProductClick = (product: ProductCardProps) => {
@@ -20,22 +17,6 @@ export function Advertisements() {
     navigate(`/product/${product.title}`);
     console.log(product);
   };
-
-  // Fetch books data on component mount
-  useEffect(() => {
-    setIsLoading(true);
-    fetchBooks()
-      .then((data) => {
-        setBooks(data);
-        setError(null);
-      })
-      .catch((_error) => {
-        setError("Failed to load books");
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, []);
 
   // Theme and responsive layout handling
   const theme = useMantineTheme();

@@ -19,7 +19,8 @@
     "checkout": "Checkout",
     "empty": "Your cart is empty",
     "total": "Total",
-    "quantity": "Quantity"
+    "quantity": "Quantity",
+    "addToCart": "Add to cart"
   },
   "landingPage": {
     "newArrivals": "New Arrivals",
@@ -50,5 +51,16 @@
       "externalPhone": "Other Countries : +0123456789",
       "email": "Info@test.com"
     }
+  },
+  "productCard": {
+    "price": "At the fair price of :"
+  },
+  "paymentModal": {
+    "quickPurchase": "Quick Purchase",
+    "completeYourPurchase": "Complete your purchase",
+    "paymentMethod": "Payment Method",
+    "paymentDetails": "Payment Details",
+    "by": "By",
+    "customerInformation": "Customer Information"
   }
 }

@@ -54,7 +54,7 @@ export function Input() {
     [navigate, setSelectedProduct, setSearchQuery, handleSearchSubmit],
   );
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const [books, setBooks] = useState<ProductCardProps[] | null>(null);
 
@@ -62,7 +62,7 @@ export function Input() {
     const loadBooks = async () => {
       try {
         if (searchQuery !== "") {
-          const data = await fetchBooksByKeyWord(searchQuery);
+          const data = await fetchBooksByKeyWord(searchQuery, i18n.language);
           setBooks(data);
         }
       } catch (err) {
@@ -71,7 +71,7 @@ export function Input() {
     };
 
     loadBooks();
-  }, [searchQuery]);
+  }, [searchQuery, i18n.language]);
   Array.isArray(books);
 
   const highlightKeyword = (

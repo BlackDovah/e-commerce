@@ -623,6 +623,10 @@ video {
   margin-top: auto;
 }
 
+.mt-20 {
+  margin-top: 5rem;
+}
+
 .inline {
   display: inline;
 }
@@ -720,6 +724,10 @@ video {
   width: 100%;
 }
 
+.w-\[75\%\] {
+  width: 75%;
+}
+
 .max-w-xs {
   max-width: 20rem;
 }
@@ -738,6 +746,10 @@ video {
 
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .flex-row {

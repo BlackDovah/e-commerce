@@ -1,0 +1,53 @@
+{
+  "1": {
+    "author": "دوغلاس آدمز",
+    "title": "دليل المسافر إلى المجرة - النسخة المصورة",
+    "ISBN": "978-1529046137",
+    "cover": "غلاف ورقي",
+    "price": 50,
+    "description": "العنصر الأول",
+    "ID": "C1",
+    "image": "https://m.media-amazon.com/images/I/91pUhA4qZnL._SL1500_.jpg"
+  },
+  "2": {
+    "author": "دوغلاس آدمز",
+    "title": "المطعم في نهاية الكون - النسخة المصورة",
+    "ISBN": "978-1529099133",
+    "cover": "غلاف ورقي",
+    "price": 40,
+    "description": "العنصر الثاني",
+    "ID": "C2",
+    "image": "https://m.media-amazon.com/images/I/816I++JreJL._SL1500_.jpg"
+  },
+  "3": {
+    "author": "تيري براتشيت و نيل غيمان",
+    "title": "نذير خير",
+    "ISBN": "978-1473214712",
+    "cover": "غلاف صلب",
+    "price": 100,
+    "description": "العنصر الثالث",
+    "ID": "C3",
+    "image": "https://m.media-amazon.com/images/I/91fm-JBn3GL._SL1500_.jpg"
+  },
+  "4": {
+    "author": "كوني ويليس",
+    "title": "اتحاد الحمقى",
+    "ISBN": "978-0241951590",
+    "cover": "غلاف ورقي",
+    "price": 75,
+    "description": "العنصر الرابع",
+    "ID": "C4",
+    "image": "https://m.media-amazon.com/images/I/81eYtyuk8yL._SL1500_.jpg"
+  },
+  "5": {
+    "author": "جيمس غوس",
+    "title": "وكالة ديرك جنتلي للتحريات الشمولية",
+    "ISBN": "978-0573111228",
+    "cover": "غلاف ورقي",
+    "price": 67,
+    "description": "العنصر الخامس",
+    "ID": "C5",
+    "image": "https://m.media-amazon.com/images/I/71EpGFjlNTL._SL1360_.jpg"
+  }
+}
+

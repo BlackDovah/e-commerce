@@ -1,8 +1,10 @@
 import { Button } from "@mantine/core";
 import { ProductDetailsAndPurchaseProps, CartItem } from "@/types/types";
 import { useProduct } from "../Contexts/ProductContext";
+import { useTranslation } from "react-i18next";
 
 export function AddToCartButton({ book }: ProductDetailsAndPurchaseProps) {
+  const { t } = useTranslation();
   const { setSelectedProduct, cartItems, setCartItems, setIsCartOpen } = useProduct();
 
   const addToCart = () => {
@@ -20,5 +22,5 @@ export function AddToCartButton({ book }: ProductDetailsAndPurchaseProps) {
     setIsCartOpen(true);
   };
 
-  return <Button onClick={addToCart}>Add to cart</Button>;
+  return <Button onClick={addToCart}>{t("cart.addToCart")}</Button>;
 }

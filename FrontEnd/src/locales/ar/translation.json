@@ -19,7 +19,8 @@
     "checkout": "إتمام الطلب",
     "empty": "سلة المشتريات فارغة",
     "total": "اجمالى المبلغ",
-    "quantity": "الكمية"
+    "quantity": "الكمية",
+    "addToCart": "أضف إلى السلة"
   },
   "landingPage": {
     "newArrivals": "وصل حديثاً",
@@ -50,5 +51,16 @@
       "externalPhone": "للتواصل من خارج مصر : 0123456789+",
       "email": "Info@test.com"
     }
+  },
+  "ProductCard": {
+    "price": "السعر :"
+  },
+  "paymentModal": {
+    "quickPurchase": "شراء",
+    "completeYourPurchase": "أكمل عملية الشراء",
+    "paymentMethod": "طريقة الدفع",
+    "paymentDetails": "تفاصيل الدفع",
+    "by": "من قبل",
+    "customerInformation": "معلومات العميل"
   }
 }
