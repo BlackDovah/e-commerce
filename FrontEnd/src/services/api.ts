@@ -2,7 +2,7 @@ import axios from "axios";
 import { ProductCardProps } from "../types/types";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "http://localhost:3000",
 });
 
 export const fetchBooks = async (language: string): Promise<ProductCardProps> => {
